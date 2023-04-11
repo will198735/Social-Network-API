@@ -19,7 +19,7 @@ module.exports = {
       )
       .catch((err) => res.status(500).json(err));
   },
-  // Create a course
+ 
   createThought(req, res) {
     Thought.create(req.body)
       .then((thought) => {
