@@ -2,13 +2,13 @@ const Thought = require('../model/thought');
 const { Course, Student } = require('../models');
 
 module.exports = {
-  // Get all courses
+
   getThoughts(req, res) {
     Thought.find()
       .then((thoughts) => res.json(thoughts))
       .catch((err) => res.status(500).json(err));
   },
-  // Get a course
+ 
   getSingleThought(req, res) {
     Thought.findOne({ _id: req.params.thoughtId })
       .select('-__v')
@@ -43,7 +43,7 @@ module.exports = {
     });
       
   },
-  // Delete a course
+
   deleteThought(req, res) {
     Thought.findOneAndDelete({ _id: req.params.thoughtId })
       .then((thought) =>
@@ -54,7 +54,7 @@ module.exports = {
       .then(() => res.json({ message: 'Thought and students deleted!' }))
       .catch((err) => res.status(500).json(err));
   },
-  // Update a course
+ 
   updateThought(req, res) {
     Thought.findOneAndUpdate(
       { _id: req.params.thoughtId },
