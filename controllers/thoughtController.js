@@ -1,5 +1,5 @@
-const Thought = require('../model/thought');
-const { Course, Student } = require('../models');
+
+const { Thought, User } = require('../models');
 
 module.exports = {
 
